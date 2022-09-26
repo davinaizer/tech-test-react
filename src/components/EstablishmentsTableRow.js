@@ -1,15 +1,19 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
+
+const rowStyle = {
+  fontSize: '20px'
+};
 
 export const EstablishmentsTableRow = ({ establishment }) => {
   return (
     <tr>
-      <td>{establishment.BusinessName}</td>
-      <td>{establishment.RatingValue}</td>
+      <td style={rowStyle}>{establishment.BusinessName}</td>
+      <td style={rowStyle}>{establishment.RatingValue}</td>
     </tr>
   );
 };
 
 EstablishmentsTableRow.propTypes = {
-  establishment: PropTypes.object,
+  establishment: PropTypes.object
 };
