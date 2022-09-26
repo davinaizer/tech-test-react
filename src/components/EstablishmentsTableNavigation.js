@@ -1,18 +1,21 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
+const navStyle = {
+  marginTop: '1rem'
+};
 const buttonStyle = {
-  margin: "0 5px",
+  margin: '0 5px'
 };
 
 export const EstablishmentsTableNavigation = ({
   pageNum,
   pageCount,
   onPreviousPage,
-  onNextPage,
+  onNextPage
 }) => {
   return (
-    <nav>
+    <nav style={navStyle}>
       {
         <button
           type="button"
@@ -20,7 +23,7 @@ export const EstablishmentsTableNavigation = ({
           disabled={pageNum <= 1}
           onClick={onPreviousPage}
         >
-          -
+          {'<<'}
         </button>
       }
       {pageNum}
@@ -31,7 +34,7 @@ export const EstablishmentsTableNavigation = ({
           disabled={pageNum >= pageCount}
           onClick={onNextPage}
         >
-          +
+          {'>>'}
         </button>
       }
     </nav>
@@ -42,5 +45,5 @@ EstablishmentsTableNavigation.propTypes = {
   pageNum: PropTypes.number,
   pageCount: PropTypes.number,
   onPreviousPage: PropTypes.func,
-  onNextPage: PropTypes.func,
+  onNextPage: PropTypes.func
 };
